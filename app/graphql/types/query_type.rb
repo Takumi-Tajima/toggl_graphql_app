@@ -34,6 +34,11 @@ module Types
     def user(id:)
       User.find(id)
     end
+
+    field :users, [Types::UserType], null: false
+    def users
+      User.all
+    end
   end
 end
 
