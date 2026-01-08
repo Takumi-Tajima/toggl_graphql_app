@@ -18,23 +18,9 @@ module Types
       ids.map { |id| context.schema.object_from_id(id, context) }
     end
 
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
-
-    # TODO: remove me
-    field :test_field, String, null: false,
-                               description: 'An example field added by the generator'
-    def test_field
-      'Hello World!'
-    end
-
     field :user, resolver: Resolvers::UserResolver
-
-    field :users, [Types::UserType], null: false
-    def users
-      User.all
-    end
+    field :users, resolver: Resolvers::UsersResolver
+    field :book, resolver: Resolvers::BookResolver
+    field :books, resolver: Resolvers::BooksResolver
   end
 end
-
-# https://zenn.dev/igaiga/books/rails-practice-note/viewer/rails_graphql_workshop#1%E3%81%A4%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B-field-%3Auser

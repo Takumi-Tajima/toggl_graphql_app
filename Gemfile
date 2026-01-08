@@ -5,6 +5,7 @@ gem 'rails', '~> 8.1.1'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'graphql'
+gem 'graphql-batch'
 gem 'image_processing'
 gem 'jbuilder'
 gem 'jsbundling-rails'
